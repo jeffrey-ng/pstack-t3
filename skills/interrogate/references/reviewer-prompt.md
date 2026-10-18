@@ -18,6 +18,12 @@ Review whether the code achieves this intent well. Do NOT question the intent it
 
 {DIFF_OR_FILES}
 
+## Organizational Context
+
+Org-context brief: {ORG_CONTEXT_PATH}
+
+When it is not `none`, read it before the diff. A change that breaks a **Preserve** item, repeats an **Avoid** approach, or breaks a **Rules** item is a finding, and its evidence cites the brief's source URL. If `command -v unblocked` resolves, also run `unblocked context-get-rules --repo-name {REPO} --task code-review --paths <changed files>` and check the diff against the rules it returns.
+
 ## Review Rubric
 
 {RUBRIC_CONTENTS}
@@ -38,7 +44,8 @@ For each finding, provide:
    - `nit`: Style, naming, minor improvement.
 2. **Finding**: What the problem is, in concrete terms. Reference specific lines/functions.
 3. **Evidence**: Why you believe this is a problem. Show your reasoning. Don't just assert.
-4. **Suggestion** (optional): What you'd do instead, only if you have a concrete alternative.
+4. **Failure scenario**: Required for `critical` and `warning`. The concrete input, state, or sequence and the wrong result it produces. A finding you cannot give one for is a `nit` at most.
+5. **Suggestion** (optional): What you'd do instead, only if you have a concrete alternative.
 
 A good finding references specific code, not vague concerns ("this could be better"). It distinguishes between "this is broken" and "I would have done this differently". It considers the stated intent. A finding that ignores the context of what's being built is a bad finding.
 
@@ -55,6 +62,7 @@ Return your findings as a structured list:
 **Location**: file:line or function name
 **Finding**: What's wrong
 **Evidence**: Why this matters
+**Failure scenario**: Input or state → wrong result
 **Suggestion**: (optional) What to do instead
 
 ### 2. [Severity] Short title

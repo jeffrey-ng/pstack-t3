@@ -50,7 +50,7 @@ Codex threads run every skill as `$<name>` where this README and the skills writ
 | `/architect` | You're about to write code that crosses a function boundary and want its shape settled first. |
 | `/arena` | You want N parallel attempts at the same thing, then the best parts of each. |
 | `/swarm` | You want N parallel workers across slices or races, then one report. |
-| `/interrogate` | You have a diff and want different models to try to break it. |
+| `/interrogate` | You have a diff and want models other than the author's to try to break it. Small diffs get one reviewer. Large or risky diffs get a max-effort panel and a refute pass. |
 | `/automate-me` | You want your own `-mode` skill, drafted from how you've actually worked. |
 | `/make-bot-ui` | You want a page whose buttons wake a T3 thread over a webhook. |
 | `/reflect` | A long task landed and you want the recipe captured as a skill edit. |
