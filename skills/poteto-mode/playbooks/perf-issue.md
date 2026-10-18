@@ -2,6 +2,8 @@
 
 **You own the measurement story. Plan, review, verify the numbers.** Tie every fix to a measurement, don't read source instead of measuring.
 
+Before step 1, run the **org-context** skill on the area you will change, and give its brief to every delegate.
+
 1. Capture a baseline trace on the matching surface (Non-negotiables). Vet the baseline, and each later number, with the **benchmark-checklist** skill.
 2. `how` to ground hypotheses. Don't claim a perf ceiling without running it first.
    Try the performance mantras in order, cheapest first:

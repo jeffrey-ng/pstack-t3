@@ -4,6 +4,8 @@
 
 Be scientific. Every shipped line traces to runtime evidence. Belt-and-suspenders that "might help" is a hypothesis, not a fix. It does not ship. When evidence refutes a hypothesis, revert what it motivated. The smallest change the evidence justifies ships, nothing more.
 
+Before step 1, run the **org-context** skill on the area you will change, and give its brief to every delegate.
+
 1. Reproduce it yourself on the matching surface (Non-negotiables): the project's verification skill if it has one, otherwise `preview_*` for web UIs, `device_*` for simulators, and the shell for CLIs and TUIs. Do it even when a debug or instrumentation protocol says to ask the user to reproduce. Ask the user only with a stated, specific reason that surface cannot reach the target, and only after driving it as far as it goes. If it won't reproduce directly, synthesize the trigger, tighten conditions, or instrument until it fires.
 2. Binary-search the cause. Form the candidate hypotheses, then rule them out until one survives. Seed them with `how` over the affected subsystem and the **why** skill for regression history. Each pass, take the split that cuts the most remaining problem space, get runtime evidence, eliminate. When program state is unclear, add instrumentation or logging and read it as the code runs. Don't guess. Drive a long or stubborn hunt with a `schedule_task` interval that wakes this thread. Record its id and delete it with `delete_scheduled_task` when the hunt ends or stops. Confirm the surviving *mechanism* with runtime evidence before the step-3 architect/interrogate fan-out.
 3. Plan the fix. If it crosses a function boundary, `architect` first. Delegate implementation to a `delegate_task` child on your `bug-fix` model with a specific scope.
